@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyberage Technology</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-black transition-colors duration-500" id="body">
+
+  <!-- Header / Logo -->
+  <header class="flex items-center justify-between px-8 py-6">
+    <div class="flex items-center gap-4">
+      <img id="logo" src="logo.png" alt="Cyberage Logo" class="h-14 transition duration-500" />
+      <h1 class="text-2xl font-bold tracking-widest">BUILD THE FUTURE</h1>
+    </div>
+    <div class="flex items-center gap-6">
+      <nav class="hidden md:flex gap-8 text-gray-600">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+      </nav>
+      <button onclick="toggleTheme()" class="px-4 py-2 rounded-xl border">🌙</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="text-center py-32 px-6">
+    <h2 class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text">
+      Empowering IT Solutions for Your Business
+    </h2>
+    <p class="mt-6 max-w-2xl mx-auto text-gray-600" id="heroText">
+      We provide cutting-edge IT services including cloud computing, cybersecurity, software development, and AI solutions.
+    </p>
+    <button class="mt-8 px-6 py-3 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+      Get Started
+    </button>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-20 px-6 max-w-5xl mx-auto text-center border border-gray-200 rounded-2xl">
+    <h2 class="text-3xl font-semibold mb-6">About Cyberage Technology</h2>
+    <p class="text-gray-600">
+      We are industry leaders in IT services, delivering innovative and futuristic solutions to help businesses grow in the digital age.
+    </p>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-20 px-6">
+    <h2 class="text-3xl font-semibold text-center mb-12">Our IT Services</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+
+      <div class="p-6 bg-gray-100 border rounded-2xl text-center">
+        <h3 class="text-xl font-semibold">Cloud Computing</h3>
+        <p class="text-gray-600 mt-2">Scalable cloud infrastructure solutions.</p>
+      </div>
+
+      <div class="p-6 bg-gray-100 border rounded-2xl text-center">
+        <h3 class="text-xl font-semibold">Cybersecurity</h3>
+        <p class="text-gray-600 mt-2">Protect your systems with advanced security.</p>
+      </div>
+
+      <div class="p-6 bg-gray-100 border rounded-2xl text-center">
+        <h3 class="text-xl font-semibold">Software Development</h3>
+        <p class="text-gray-600 mt-2">Custom applications for your business.</p>
+      </div>
+
+      <div class="p-6 bg-gray-100 border rounded-2xl text-center">
+        <h3 class="text-xl font-semibold">Artificial Intelligence</h3>
+        <p class="text-gray-600 mt-2">AI-powered automation and insights.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 text-center">
+    <h2 class="text-3xl font-semibold">Ready to Transform Your Business?</h2>
+    <button class="mt-6 px-8 py-3 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+      Contact Us
+    </button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t py-8 text-center text-gray-500">
+    © 2026 Cyberage Technology. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const body = document.getElementById('body');
+      const logo = document.getElementById('logo');
+
+      if (body.classList.contains('bg-white')) {
+        // Switch to dark mode
+        body.classList.remove('bg-white', 'text-black');
+        body.classList.add('bg-black', 'text-white');
+        logo.classList.add('invert');
+      } else {
+        // Switch to light mode
+        body.classList.remove('bg-black', 'text-white');
+        body.classList.add('bg-white', 'text-black');
+        logo.classList.remove('invert');
+      }
+    }
+  </script>
+
+</body>
+</html>
