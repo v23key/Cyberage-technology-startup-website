@@ -1,104 +1,113 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cyberage Technology</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-white text-black transition-colors duration-500" id="body">
 
-  <!-- Header / Logo -->
-  <header class="flex items-center justify-between px-8 py-6">
+  <!-- Header -->
+  <header class="flex items-center justify-between px-8 py-6 border-b">
     <div class="flex items-center gap-4">
       <img id="logo" src="logo.png" alt="Cyberage Logo" class="h-14 transition duration-500" />
       <h1 class="text-2xl font-bold tracking-widest"></h1>
     </div>
+
     <div class="flex items-center gap-6">
-      <nav class="hidden md:flex gap-8 text-gray-600">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+      <nav class="hidden md:flex gap-6 text-gray-600">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
       </nav>
       <button onclick="toggleTheme()" class="px-4 py-2 rounded-xl border">🌙</button>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="text-center py-32 px-6">
+  <!-- HERO -->
+  <section id="home" class="text-center py-28 px-6">
     <h2 class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text">
       Empowering IT Solutions for Your Business
     </h2>
-    <p class="mt-6 max-w-2xl mx-auto text-gray-600" id="heroText">
+    <p class="mt-6 max-w-2xl mx-auto text-gray-600">
       We provide cutting-edge IT services including cloud computing, cybersecurity, software development, and AI solutions.
     </p>
-    <button class="mt-8 px-6 py-3 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+    <button class="mt-8 px-6 py-3 rounded-2xl bg-blue-600 text-white">
       Get Started
     </button>
   </section>
 
-  <!-- About Section -->
-  <section class="py-20 px-6 max-w-5xl mx-auto text-center border border-gray-200 rounded-2xl">
-    <h2 class="text-3xl font-semibold mb-6">About Cyberage Technology</h2>
+  <!-- ABOUT -->
+  <section id="about" class="py-24 px-6 max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6">About Us</h2>
     <p class="text-gray-600">
-      We are industry leaders in IT services, delivering innovative and futuristic solutions to help businesses grow in the digital age.
+      Cyberage Technology is a next-generation IT company delivering innovative digital solutions.
+      We specialize in cloud infrastructure, AI systems, cybersecurity, and enterprise software.
     </p>
   </section>
 
-  <!-- Services Section -->
-  <section class="py-20 px-6">
-    <h2 class="text-3xl font-semibold text-center mb-12">Our IT Services</h2>
+  <!-- SERVICES -->
+  <section id="services" class="py-24 px-6 bg-gray-50">
+    <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
 
-      <div class="p-6 bg-gray-100 border rounded-2xl text-center">
+      <div class="p-6 bg-white border rounded-2xl text-center">
         <h3 class="text-xl font-semibold">Cloud Computing</h3>
         <p class="text-gray-600 mt-2">Scalable cloud infrastructure solutions.</p>
       </div>
 
-      <div class="p-6 bg-gray-100 border rounded-2xl text-center">
+      <div class="p-6 bg-white border rounded-2xl text-center">
         <h3 class="text-xl font-semibold">Cybersecurity</h3>
-        <p class="text-gray-600 mt-2">Protect your systems with advanced security.</p>
+        <p class="text-gray-600 mt-2">Advanced protection for your systems.</p>
       </div>
 
-      <div class="p-6 bg-gray-100 border rounded-2xl text-center">
+      <div class="p-6 bg-white border rounded-2xl text-center">
         <h3 class="text-xl font-semibold">Software Development</h3>
-        <p class="text-gray-600 mt-2">Custom applications for your business.</p>
+        <p class="text-gray-600 mt-2">Custom web and mobile applications.</p>
       </div>
 
-      <div class="p-6 bg-gray-100 border rounded-2xl text-center">
+      <div class="p-6 bg-white border rounded-2xl text-center">
         <h3 class="text-xl font-semibold">Artificial Intelligence</h3>
-        <p class="text-gray-600 mt-2">AI-powered automation and insights.</p>
+        <p class="text-gray-600 mt-2">AI automation and smart solutions.</p>
       </div>
 
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="py-24 text-center">
-    <h2 class="text-3xl font-semibold">Ready to Transform Your Business?</h2>
-    <button class="mt-6 px-8 py-3 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 text-white">
-      Contact Us
-    </button>
+  <!-- CONTACT -->
+  <section id="contact" class="py-24 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-6">Contact Us</h2>
+
+    <form class="max-w-xl mx-auto space-y-4">
+      <input class="w-full p-3 border rounded-xl" type="text" placeholder="Your Name" />
+      <input class="w-full p-3 border rounded-xl" type="email" placeholder="Your Email" />
+      <textarea class="w-full p-3 border rounded-xl" rows="5" placeholder="Your Message"></textarea>
+      <button class="w-full bg-blue-600 text-white py-3 rounded-xl">
+        Send Message
+      </button>
+    </form>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="border-t py-8 text-center text-gray-500">
     © 2026 Cyberage Technology. All rights reserved.
   </footer>
 
+  <!-- SCRIPT -->
   <script>
     function toggleTheme() {
       const body = document.getElementById('body');
       const logo = document.getElementById('logo');
 
       if (body.classList.contains('bg-white')) {
-        // Switch to dark mode
         body.classList.remove('bg-white', 'text-black');
         body.classList.add('bg-black', 'text-white');
         logo.classList.add('invert');
       } else {
-        // Switch to light mode
         body.classList.remove('bg-black', 'text-white');
         body.classList.add('bg-white', 'text-black');
         logo.classList.remove('invert');
