@@ -215,6 +215,14 @@
         animation: none;
       }
     }
+
+    .theme-toggle-knob {
+      transform: translateX(0);
+    }
+
+    .dark .theme-toggle-knob {
+      transform: translateX(1.5rem);
+    }
   </style>
 </head>
 
@@ -222,14 +230,8 @@
   <div class="min-h-screen overflow-hidden">
     <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/[0.88] px-5 py-4 backdrop-blur-xl transition-colors duration-500 dark:border-white/10 dark:bg-cyber-ink/[0.88] md:px-8">
       <div class="mx-auto flex max-w-7xl items-center justify-between gap-5">
-        <a href="#home" class="flex min-w-0 items-center gap-3" aria-label="Cyberage Technology home">
-          <div class="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded border border-slate-200 bg-white dark:border-white/15 dark:bg-white">
-            <img id="logo" src="logo.png" alt="Cyberage Logo" class="h-full w-full object-contain" />
-          </div>
-          <div class="leading-tight">
-            <p class="digital-font text-sm font-black uppercase">Cyberage</p>
-            <p class="digital-font text-xs font-semibold uppercase text-slate-500 dark:text-slate-400">Technology</p>
-          </div>
+        <a href="#home" class="flex min-w-0 items-center" aria-label="Cyberage Technology home">
+          <img id="logo" src="logo.png" alt="Cyberage Logo" class="h-14 w-auto shrink-0 object-contain transition duration-500 md:h-16" />
         </a>
 
         <div class="flex items-center gap-4">
@@ -239,8 +241,9 @@
             <a class="transition hover:text-cyber-blue" href="#proof">Proof</a>
             <a class="transition hover:text-cyber-blue" href="#contact">Contact</a>
           </nav>
-          <button id="themeButton" onclick="toggleTheme()" class="inline-flex h-10 w-10 items-center justify-center rounded border border-slate-300 text-slate-700 transition hover:border-cyber-blue hover:text-cyber-blue dark:border-white/15 dark:text-slate-200" aria-label="Toggle dark mode">
-            <span id="themeIcon">◐</span>
+          <button id="themeButton" onclick="toggleTheme()" class="relative inline-flex h-8 w-14 items-center rounded-full border border-slate-300 bg-slate-100 p-1 transition hover:border-cyber-blue dark:border-white/15 dark:bg-slate-800" aria-label="Toggle dark mode" type="button">
+            <span class="sr-only">Toggle dark mode</span>
+            <span id="themeKnob" class="theme-toggle-knob flex h-6 w-6 items-center justify-center rounded-full bg-white text-[11px] font-black text-slate-700 shadow transition-transform duration-300 dark:bg-cyber-blue dark:text-white">☾</span>
           </button>
         </div>
       </div>
@@ -472,7 +475,8 @@
 
     function toggleTheme() {
       const body = document.getElementById("body");
-      const icon = document.getElementById("themeIcon");
+      const logo = document.getElementById("logo");
+      const knob = document.getElementById("themeKnob");
 
       body.classList.toggle("dark");
       body.classList.toggle("bg-white");
@@ -480,12 +484,6 @@
       body.classList.toggle("text-slate-950");
       body.classList.toggle("text-white");
 
-      icon.textContent = body.classList.contains("dark") ? "☀" : "◐";
-    }
-
-    runTypingAnimation();
-    updateVisitorCount();
-  </script>
-</body>
-</html>
-
+      const isDark = body.classList.contains("dark");
+      if (logo) logo.classList.toggle("invert", isDark);
+      if 
